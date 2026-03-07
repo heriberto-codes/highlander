@@ -1,4 +1,4 @@
-var APP_URL = 'http://localhost:8080/'
+var APP_URL = window.location.origin + '/'
 
 var state = {
   teams: [],

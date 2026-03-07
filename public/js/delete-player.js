@@ -1,4 +1,4 @@
-var APP_URL = 'http://localhost:8080/'
+var APP_URL = window.location.origin + '/'
 
 $(document).ready(function() {
   console.log('I am ready to delete a team')
@@ -41,7 +41,7 @@ $(document).ready(function() {
       url: APP_URL + 'players/' + playerId,
       success: function() {
         console.log('Hello we got to the success call back')
-        location.href = 'http://localhost:8080/dashboard.html?id=' + coachId;
+        location.href = APP_URL + 'dashboard.html?id=' + coachId;
       },
       fail: function () {
         alert('Delete function failed')
