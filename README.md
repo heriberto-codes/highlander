@@ -83,7 +83,9 @@ Development defaults to:
 Production (Fly.io) should use:
 
 - `DATABASE_URL` (managed Postgres URL)
+- `AUTH_SECRET` (long random value for signing auth tokens)
 - Optional: `DB_SSL=false` if SSL must be disabled in a specific environment
+- Optional: `DB_SSL_INSECURE=true` only for non-production environments with self-signed certs
 
 # Database Structure
 http://dbpatterns.com/documents/58c5ff7f1514b438af1a805e/

@@ -3,6 +3,7 @@ const router = app.Router();
 
 const bodyParser = require('body-parser');
 const jsonParser = bodyParser.json();
+const { requireAuth } = require('../middleware/auth');
 
 const Team = require('../models/Team');
 const Player = require('../models/Player');
@@ -10,6 +11,7 @@ const Coaches = require('../models/Coach');
 
 router.use(bodyParser.urlencoded({extended: true}));
 router.use(jsonParser);
+router.use(requireAuth);
 
 router.get('/', function(req, res) {
   Team
@@ -80,7 +82,7 @@ router.post('/', function(req, res) {
   })
   .save()
   .then(function(team) {
-  team.coach().attach(req.body.coachId)
+  team.coach().attach(req.authCoachId)
     return res.status(200).json(team);
   })
   .catch(function(err) {

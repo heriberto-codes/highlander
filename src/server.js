@@ -2,6 +2,7 @@ const express = require('express');
 const morgan = require('morgan');
 
 const app = express();
+app.disable('x-powered-by');
 
 const playerRouter = require('./routes/playerRouter');
 const coachRouter = require('./routes/coachRouter');
@@ -9,13 +10,18 @@ const teamRouter = require('./routes/teamRouter');
 const statRouter = require('./routes/statRouter');
 
 app.use(morgan('common'));
+app.use((req, res, next) => {
+  res.setHeader('X-Content-Type-Options', 'nosniff');
+  res.setHeader('X-Frame-Options', 'DENY');
+  res.setHeader('Referrer-Policy', 'no-referrer');
+  next();
+});
 app.use(express.static('public'));
 
 app.use('/players', playerRouter);
 app.use('/coaches', coachRouter);
 app.use('/teams', teamRouter);
 app.use('/stats', statRouter);
-app.use('/stats', playerRouter);
 
 let server;
 

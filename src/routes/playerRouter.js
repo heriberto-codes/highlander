@@ -3,12 +3,14 @@ const router = app.Router();
 
 const bodyParser = require('body-parser');
 const jsonParser = bodyParser.json();
+const { requireAuth } = require('../middleware/auth');
 
 const Player = require('../models/Player');
 const Stat = require('../models/Stat');
 
 router.use(bodyParser.urlencoded({extended: true}));
 router.use(jsonParser);
+router.use(requireAuth);
 
 router.get('/', function(req, res) {
   Player

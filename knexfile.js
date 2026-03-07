@@ -34,7 +34,11 @@ module.exports = {
     connection: process.env.DATABASE_URL
       ? {
           connectionString: process.env.DATABASE_URL,
-          ssl: process.env.DB_SSL === 'false' ? false : { rejectUnauthorized: false }
+          ssl: process.env.DB_SSL === 'false'
+            ? false
+            : (process.env.DB_SSL_INSECURE === 'true'
+              ? { rejectUnauthorized: false }
+              : { rejectUnauthorized: true })
         }
       : {
           host: process.env.DB_HOST || '127.0.0.1',
