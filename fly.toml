@@ -1,0 +1,27 @@
+app = "highlander"
+primary_region = "ewr"
+
+[build]
+
+[env]
+  NODE_ENV = "production"
+  PORT = "8080"
+
+[deploy]
+  release_command = "npm run migrate"
+
+[http_service]
+  internal_port = 8080
+  force_https = true
+  auto_stop_machines = "stop"
+  auto_start_machines = true
+  min_machines_running = 0
+  processes = ["app"]
+
+  [[http_service.checks]]
+    grace_period = "15s"
+    interval = "30s"
+    method = "get"
+    path = "/"
+    protocol = "http"
+    timeout = "10s"
