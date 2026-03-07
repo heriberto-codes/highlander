@@ -8,8 +8,6 @@ $(document).ready(function() {
       password: $('#password').val()
     }
 
-    console.log('postData', postData)
-
     if ($('.required').val().length === 0) {
       $('.add-team-error-notification').slideDown('fast')
       window.setTimeout(closeWarningMessage, 3000)
@@ -25,7 +23,6 @@ $(document).ready(function() {
         url: APP_URL + 'coaches/login',
         data: JSON.stringify(postData),
         success: function(response) {
-            console.log(response)
             localStorage.setItem('authToken', response.token)
             localStorage.setItem('coachId', response.id)
             localStorage.setItem('showWelcomeMessage', 'true')

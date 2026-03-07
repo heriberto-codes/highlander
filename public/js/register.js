@@ -25,7 +25,6 @@ var APP_URL = window.location.origin + '/'
          url: APP_URL + 'coaches',
          data: JSON.stringify(postData),
          success: function(response) {
-          console.log(response);
           localStorage.setItem('authToken', response.token);
           localStorage.setItem('coachId', response.id);
           localStorage.setItem('showWelcomeMessage', 'true');
