@@ -12,6 +12,10 @@ $(document).ready(function () {
 
   var coachId = localStorage.getItem('coachId');
   if(!coachId) location.href= APP_URL + 'login.html';
+  var showWelcomeMessage = localStorage.getItem('showWelcomeMessage') === 'true';
+  if(!showWelcomeMessage) {
+    $('.notification-container').hide();
+  }
    $.get(APP_URL + 'coaches/' + coachId, function(data) {
      var listTeams = data.teams.map(function(team){
      var listTeam = $('<li class="panel-heading">')
@@ -201,6 +205,7 @@ $(document).ready(function () {
     })
 
     $( ".delete" ).click(function() {
+      localStorage.setItem('showWelcomeMessage', 'false');
       $( ".notification-container" ).fadeOut( "slow", function() {
       });
     });

@@ -44,6 +44,47 @@ Want to keep up with the development and roadmap of Highlander?  https://trello.
 
 - Client: jQuery, HTML, CSS, Bulma
 
+## Local Setup (2026 Refresh)
+
+### Prerequisites
+
+- Node `16.20.2` (`.nvmrc` included)
+- PostgreSQL 14+ running locally
+
+### One-time setup
+
+```bash
+nvm use
+npm install
+createdb highlander
+npm run migrate
+npx knex seed:run
+```
+
+### Run locally
+
+```bash
+nvm use
+npm start
+```
+
+App runs on `http://localhost:8080`.
+
+### Environment Variables
+
+Development defaults to:
+
+- `DB_HOST=127.0.0.1`
+- `DB_PORT=5432`
+- `DB_NAME=highlander`
+- `DB_USER=<your macOS username>`
+- `DB_PASSWORD=`
+
+Production (Fly.io) should use:
+
+- `DATABASE_URL` (managed Postgres URL)
+- Optional: `DB_SSL=false` if SSL must be disabled in a specific environment
+
 # Database Structure
 http://dbpatterns.com/documents/58c5ff7f1514b438af1a805e/
 

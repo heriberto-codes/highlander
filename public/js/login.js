@@ -27,6 +27,7 @@ $(document).ready(function() {
         success: function(response) {
             console.log(response)
             localStorage.setItem('coachId', response.id)
+            localStorage.setItem('showWelcomeMessage', 'true')
             location.href = APP_URL + 'dashboard.html'
         },
         error: function() {

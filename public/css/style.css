@@ -165,6 +165,12 @@ div.panel-block.panel-heading.panel-heading-center {
   color: #FFA500;
 }
 
+.demo-login-note {
+  padding: 0 1.5rem 1rem;
+  font-size: 0.95rem;
+  color: #4a4a4a;
+}
+
 /* ======================================
   Global Dashboard
 ========================================= */
