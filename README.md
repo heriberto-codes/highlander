@@ -2,7 +2,7 @@
 <!-- [![Build Status](https://travis-ci.org/getromandev/highlander.svg?branch=master)](https://travis-ci.org/getromandev/highlander) -->
 
 ## Live Demo
-Link: https://highlandersportjquery.herokuapp.com/index.html
+Link: https://highlander.fly.dev/index.html
 
 ## Description
 A simple app for coaches to manage their teams stats, averages, trash talk, and poach players from other teams.
