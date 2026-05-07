@@ -1,3 +1,5 @@
+[![wakatime](https://wakatime.com/badge/user/3a78d911-a08a-40c2-bf2c-782c4d20eb23/project/75fa02d0-ca4f-40c7-891e-a7750ff15771.svg)](https://wakatime.com/badge/user/3a78d911-a08a-40c2-bf2c-782c4d20eb23/project/75fa02d0-ca4f-40c7-891e-a7750ff15771)
+
 ![Highlander](/public/assets/img/highlander_logo.png)
 <!-- [![Build Status](https://travis-ci.org/getromandev/highlander.svg?branch=master)](https://travis-ci.org/getromandev/highlander) -->
 
